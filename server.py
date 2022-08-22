@@ -107,12 +107,12 @@ def handle_client(conn, addr):
             new_message = client_response(conn)
             print(f"client sent {new_message}")
 
-            if new_message == "NEW":
+            if new_message.upper() == "NEW":
                 print ("New order has been chosen")
                 #text = "New order has been chosen"
                 #message_client(conn, text)
                 connected2 = True
-            elif new_message == "OLD":
+            elif new_message.upper() == "OLD":
                 print ("Pick up an old order has been selected")
                 if customer in orders.keys():
                     to_send = f"{customer} can pick up the order using PKUP command."
@@ -126,7 +126,7 @@ def handle_client(conn, addr):
                             message_client(conn, ready_order)
                             pick_up = False
                             sys.exit()
-                        elif msg == "END" or msg == "end":
+                        elif msg.upper() == "END" or msg.upper() == "end":
                             conn.send("END".encode(FORMAT))
                             connected = False
                         else:
@@ -137,7 +137,7 @@ def handle_client(conn, addr):
                     to_send = "You haven't ordered"
                     message_client(connection, to_send)
 
-            elif new_message == "END":
+            elif new_message.upeer() == "END":
                 print ("Exiting the program")
                 text = "END"
                 message_client(conn, text)
@@ -154,11 +154,11 @@ def handle_client(conn, addr):
                 new_message = client_response(conn)
                 print(f"client sent {new_message}")
 
-                if new_message == "MENU" or new_message == "ORDR":
+                if new_message.upper() == "MENU" or new_message.upper() == "ORDR":
                     function1 = True
 
 
-                elif new_message == "END":
+                elif new_message.upper() == "END":
                     text="END"
                     message_client(conn, text)
                     connected2 = False
@@ -182,7 +182,7 @@ def handle_client(conn, addr):
                         function1 = False
                     else:
                         if new_message.upper() == "ORDR":
-                            print(f"{customer} has envoked ORDR function")
+                            print(f"{customer} has started a new order")
                             incorrect_starter = True
                             while incorrect_starter:
                                 to_send = "Enter your STARTER from the menu or none, please"
