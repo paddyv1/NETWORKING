@@ -50,7 +50,7 @@ while authorised:
         print(">>>>Not a valid user.")
 
 
-print ("OUT")
+
 
 while connected:
     msg = input(">>>>")

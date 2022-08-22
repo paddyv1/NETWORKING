@@ -137,7 +137,7 @@ def handle_client(conn, addr):
                     to_send = "You haven't ordered"
                     message_client(connection, to_send)
 
-            elif new_message.upeer() == "END":
+            elif new_message.upper() == "END":
                 print ("Exiting the program")
                 text = "END"
                 message_client(conn, text)
@@ -191,9 +191,9 @@ def handle_client(conn, addr):
                                 print(starter)
                                 if starter == "none" or starter == "NONE":
                                     incorrect_starter = False
-                                elif starter not in menu['starter']:
+                                elif starter not in menu['Starter']:
                                     incorrect_starter = True
-                                elif starter in menu['starter']:
+                                elif starter in menu['Starter']:
                                     incorrect_starter = False
 
                             incorrect_main = True
@@ -204,9 +204,9 @@ def handle_client(conn, addr):
                                 print(main)
                                 if main == "none" or main == "NONE":
                                     incorrect_main = False
-                                elif main not in menu['main']:
+                                elif main not in menu['Main']:
                                     incorrect_main = True
-                                elif main in menu['main']:
+                                elif main in menu['Main']:
                                     incorrect_main = False
 
                             incorrect_side = True
@@ -216,9 +216,9 @@ def handle_client(conn, addr):
                                 side = client_response(conn)
                                 if side == "none" or side == "NONE":
                                     incorrect_side = False
-                                elif side not in menu['side']:
+                                elif side not in menu['Side']:
                                     incorrect_side = True
-                                elif side in menu['side']:
+                                elif side in menu['Side']:
                                     incorrect_side = False
 
                             order_list = [starter, main, side]
